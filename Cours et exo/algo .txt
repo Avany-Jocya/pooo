@@ -1,0 +1,148 @@
+classe voiture :
+
+marque : chaine de caract
+modele : chaine de caract
+couleur: chaine de caract
+nb_portes : entier
+electrique : booleen
+
+fin classe
+
+fonction constructeur (marque, modele, couleur, nb_portes, electrique)
+this.marque <= marque
+this.modele <= modele
+this.nb_portes <= nb de portes
+this.electrique <= vraix / faux
+
+---------------------------------
+
+
+classe personnage {
+nom : chaine caract
+type : chaine carct
+attaque : entier
+pv : entier
+force : booleen
+
+fonction constructeur(nom, type, attaque, pv, force){
+this.nom <= nom
+this.typs <= type
+this.attaque <= points d'attaque
+this.pv <= points de vie
+this.force <= bien ou mal
+}
+
+fin classe}
+
+Algo personnage
+
+variables
+	perso 1 : personnage 1
+	perso 2 : personnage 2
+	perso 3 : personnage 3
+
+fonction constructeur (nom, type, attaque, pv, force)
+this.nom => milo		this.nom => tya
+this.type => guerrier		this.type => archère
+this.attaque => 10		this.attaque => 5
+this.pv => 100			this.pv => 50
+this.force => bien		this.force => bien
+
+this.nom => lili		this.nom => Gael
+this.type => archere		this.type => voleur
+this.attaque => 10		this.attaque => 5
+this.pv => 100			this.pv => 50
+this.force => mal		this.force => mal
+
+---------------------------------------------------------
+
+- Créer une fonction qui permet d'afficher une voiture
+- Créer une fonciton qui permet d'afficher les voitures de la marque yotota
+
+variable
+	v1,v2,v3 : voiture
+	tab[v] : tableau de voiture
+
+Debut
+	v1 <- new Voiture("yotota", "ryas", "noire", 5,vrai
+	v2 <- new Voiture("yotota", "auris", "rouge", 5,vrai
+	v3 <- new Voiture("troen", "c3", "bleu", 5,faux
+
+fonction afficherVoitures(){
+	pour i allant de 0 à taille(tab)par pas de 1 faire
+		tab[i].afficherVoiture()
+	fin pour
+	afficherVoitureMarque(tab, "yotota")
+fin
+
+-------------------------------------------------------------------------------
+
+- modifier la classe personnage pour qu'aucun attribut ne soit accessible directement qu'au travers des objets et non depuis l'extérieur
+- empecher l
+'utilisation de la fonction calculDegat deuis l'exterieur
+- modifier si necessaire l'algo principal pour créer les affichages réalisés dans la partie précédente
+
+classe presonnage
+	private nom: car
+	private classe : car
+	private attaque: ent
+	private pv: ent
+	private forceDuBien: bool
+
+private fonction calculDegat(){
+	return this.pv / 10*this.attaque +1
+	}
+
+fonction afficherDegât() {
+	afficher "degats inffligés ", this.calculDegat(), "degats"
+	}
+fin classe
+
+---------------------------------------------------------------------------------
+
+- Faire en sorte que tous les attributs de la classe voiture soient en private et créer tous les getter setter
+
+Classe: Voiture
+	marque: car
+	modele: car
+	couleur:car
+	nbPortes: ent
+	elctrik: bool
+
+public fonction constructeur (marque, modele, couleur, nbPortes, electrik)
+	private this.marque <- marque
+	private this.modele <- modele
+	private this.couleur <- couleur
+	private this.nbPortes <- nbPortes
+	private this.electrik <- electrik
+
+public fonction afficherVoiture() {
+	afficher this.marque, this.modele, this.nbPortes, "portes"
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

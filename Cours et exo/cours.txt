@@ -1,0 +1,95 @@
+-------
+| POO |
+-------
+
+
+Regroupement d'informations et création d'entités reliées par des méthodes
+
+Sequentiel:
+dissocie les dinnées et les traitements
+les fonctions structurent le code et le rend réutilisable (factorisation)
+
+POO:
+Regroupe les  infos et les traitements en un bloc ayant une existence propre.
+La logique de programmatuin est basée sur la création d'entités et non sur l'enchaînement d'instructions.
+
+Création d'objets:
+Il faut se poser des questions sur les éléments ayant besoin d'une existence propre
+ex : pour une concession auto: clients / voitures / parc auto
+
+quelles sont les infos pour chaque entité ? :
+ex: voiture = modèle, marque, immat...
+    client = nom, prenom, adresse...
+
+Quels sont les traitements associés aux entités ? :
+ex : voitures = état du véhicule, changer le prix...
+     client = réserver, modifier les infos, commander...
+
+
+Création de blocs logiques : qui regroupent les objets
+Création de classes pour regrouper les types d'informations pour des objets identiques
+
+
+Création d'objets :
+-------------------
+
+Pour créer des objets à partir d'une classe, il faut définir un constructeur.
+C'est une fonction intégrée comme élément d'une classe.
+
+ - Instanciation
+c'est la création et l'initialisation d'un objet
+avec le mot clé 'new' on peut instancier une classe pour en faire un objet
+
+
+Acces aux attributs d'un objet :
+--------------------------------
+avec le mot clé 'this'.'attribut'
+
+
+Visibilité des fonctions ou des classes :
+-----------------------------------------
+tout attribut ou fonction peut etre déclaré en public ou private
+public info accessible à tout le monde n'importe quand
+private info accessible uniquement que par l'objet lui même
+
+En général on met les attributs en private
+
+Getter / Setter
+---------------
+getter permet d'obtenir une valeur
+setter permet de modifier la valeur
+
+pour chaque attribut private on met un getter
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

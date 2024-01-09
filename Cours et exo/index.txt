@@ -1,0 +1,31 @@
+<?php
+class Personnage{
+    public string $nom;
+    public int $age;
+    public bool $sexe;
+
+    public function __construct($nom, $age, $sexe)
+    {
+        $this->nom = $nom;
+        $this->age = $age;
+        $this->sexe = $sexe;
+    }
+
+    public function anniversaire() {
+        echo "C'est mon anniversaire";
+        $this->gagne1an();
+        echo "J'ai ". $this->age . " ans";
+    }
+
+    public function gagne1an() {
+        $this->age = $this-> age+1;
+    }
+}
+
+
+$perso1 = new Personnage("Toto", 12, true);
+echo $perso1->nom;
+echo $perso1->anniversaire();
+// sortie dans le terminal
+
+?>
