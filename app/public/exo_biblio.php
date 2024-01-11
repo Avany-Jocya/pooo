@@ -1,7 +1,6 @@
 <?php
 
-class Bibliotheque
-{
+class Bibliotheque {
     private string $nom;
     private string $adresse;
     private array $livres;
@@ -37,8 +36,7 @@ class Bibliotheque
     }
 }
 
-class Livre
-{
+class Livre {
     // attributs
     private string $type;
     private string $titre;
@@ -54,9 +52,7 @@ class Livre
         $this->nbPages = $nbPages;
         $this->estTraduitEnAnglais = false;
     }
-
-    public function __toString()
-    {
+    public function __toString() {
         $msg = "Type : " . $this->type . ".</br>
               Titre : " . $this->titre . ".</br>
               Auteur : " . $this->auteur . ".</br>
@@ -71,44 +67,34 @@ class Livre
         return $msg;
     }
 
-    public function getType()
-    {
+    public function getType(){
         return $this->type;
     }
-    public function setType($newType)
-    {
+    public function setType($newType){
         $this->type = $newType;
     }
-    public function getTitre()
-    {
+    public function getTitre(){
         return $this->titre;
     }
-    public function setTitre($newTitre)
-    {
+    public function setTitre($newTitre){
         $this->titre = $newTitre;
     }
-    public function getAuteur()
-    {
+    public function getAuteur(){
         return $this->auteur;
     }
-    public function setAuteur($newAuteur)
-    {
+    public function setAuteur($newAuteur){
         $this->auteur = $newAuteur;
     }
-    public function getNbPages()
-    {
+    public function getNbPages(){
         return $this->nbPages;
     }
-    public function setNbPages($newNbPage)
-    {
+    public function setNbPages($newNbPage){
         $this->nbPages = $newNbPage;
     }
-    public function getEstTraduitEnAnglais()
-    {
+    public function getEstTraduitEnAnglais(){
         return $this->estTraduitEnAnglais;
     }
-    public function setEstTraduitEnAnglais($newEstTraduitEnAnglais)
-    {
+    public function setEstTraduitEnAnglais($newEstTraduitEnAnglais){
         $this->estTraduitEnAnglais = $newEstTraduitEnAnglais;
     }
 }
