@@ -75,10 +75,8 @@ class Zombie extends Personnage{
         echo "Zombie " . $this->nom . " en approche"; 
     }
 
-
     public function __toString()
     {
-      
         $txt = "";
         $txt= "</br>Zombie en approche!</br></br>";
         $txt .= parent::__toString();
@@ -88,9 +86,8 @@ class Zombie extends Personnage{
         return $txt;
     }
     public function augmenteVitesse(){
-        $this->vitesse++;
+        $this->vitesse ++;
     }
-
 }
 $perso1= new Humain ("Seonghwa","Mage",100,50,true,2);
 $perso2= new Humain("Bangchan","Mage",85,75,false,3);
@@ -111,9 +108,9 @@ foreach($personnages as $personnage) {
 }
 
 foreach($zombies as $zombie) {
-   
     echo $zombie;
 }
+
 
 //Test de la méthode afficherDegats();
 // $perso1->afficherDegats();
