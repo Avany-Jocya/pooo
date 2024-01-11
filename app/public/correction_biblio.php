@@ -5,6 +5,8 @@ class Bibliotheque
     private array $romans;
     private array $bds;
     private array $policiers;
+    private array $nonClasses;
+
 
     public function __construct()
     {
@@ -30,9 +32,13 @@ class Bibliotheque
             case 'policier':
                 $this->policiers[] = $nouveauLivre;
                 break;
+            case '':
+                $this->nonClasses[] = $nouveauLivre;
+                break;
         }
     }
 
+    
     public function __toString()
     {
         $txt = "";
@@ -47,6 +53,10 @@ class Bibliotheque
         $txt .= "############## Policiers #############</br>";
         for ($i = 0; $i < count($this->policiers); $i++) {
             $txt .= $this->policiers[$i];
+        }
+        $txt .= "############## Non ClassÃ© #############</br>";
+        for ($i = 0; $i < count($this->nonClasses); $i++) {
+            $txt .= $this->nonClasses[$i];
         }
         return $txt;
     }
@@ -87,7 +97,11 @@ class Livre
     {
         $this->couleurCouverture = $nouvelleCouleur;
     }
-    
+
+    public function modifierType($nouveauType)
+    {
+        $this->type = $nouveauType;
+    }
 
 
     public function __toString()
@@ -116,29 +130,42 @@ class Livre
         // $this->nbPages = $this->nbPages + $nbPagesAjoutees;
     }
 
-    // public function getCouleurCouverture(): string {
+    // /**
+    //  * Get the value of couleurCouverture
+    //  *
+    //  * @return string
+    //  */
+    // public function getCouleurCouverture(): string
+    // {
     //     return $this->couleurCouverture;
     // }
-    // public function setCouleurCouverture(string $couleurCouverture): self {
+
+ 
+    // public function setCouleurCouverture(string $couleurCouverture): self
+    // {
     //     $this->couleurCouverture = $couleurCouverture;
     //     return $this;
     // }
 
-    // public function getEstTraduitEnAnglais(): bool {
+
+    // public function getEstTraduitEnAnglais(): bool
+    // {
     //     return $this->estTraduitEnAnglais;
     // }
-    // public function setEstTraduitEnAnglais(bool $estTraduitEnAnglais): self {
+
+    // public function setEstTraduitEnAnglais(bool $estTraduitEnAnglais): self
+    // {
     //     $this->estTraduitEnAnglais = $estTraduitEnAnglais;
     //     return $this;
     // }
 
-    
+ 
     public function getType(): string
     {
         return $this->type;
     }
 
-  
+
     public function setType(string $type): self
     {
         $this->type = $type;
@@ -149,11 +176,13 @@ class Livre
 $l1 = new Livre("titre", 12, "bleue", false, "bd");
 $l2 = new Livre("roman", 12, "bleue", false, "roman");
 $l3 = new Livre("policier", 12, "bleue", false, "policier");
+$l4 = new Livre("policier", 12, "vert", false, '');
 
 $maBibliotheque = new Bibliotheque();
 $maBibliotheque->ajouterLivre($l1);
 $maBibliotheque->ajouterLivre($l2);
 $maBibliotheque->ajouterLivre($l3);
+$maBibliotheque->ajouterLivre($l4);
 echo $maBibliotheque;
 
 // echo $l1;
@@ -161,18 +190,4 @@ echo $maBibliotheque;
 // echo $l1;
 // $l1->basculerEnAnglais();
 // echo $l1;
-
-// Exercice:
-
-// - création => pas de type
-
-// - méthode pour modifier type
-
-// private function changerDeType($nouveauType){
-//         $this->type = $nouveauType;
-//     }
-$l1->setType("policier")."</br>";      
-echo $l1;
-// - par défaut => non classés
-?>
 
