@@ -123,4 +123,13 @@ $biblio->ajouterUnLivre($livre6);
 
 $biblio->afficherTousLesLivres();
 // $biblio->afficherLivresParType("Romans");
+
+// Exercice:
+
+// - création => pas de type
+
+// - méthode pour modifier type
+
+// - par défaut => non classés
+
 ?>
