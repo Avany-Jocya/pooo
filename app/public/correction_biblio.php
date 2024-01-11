@@ -7,7 +7,6 @@ class Bibliotheque
     private array $policiers;
     private array $nonClasses;
 
-
     public function __construct()
     {
     }
@@ -21,8 +20,8 @@ class Bibliotheque
         // } else if ($nouveauLivre->getType() === "policier") {
         //     $this->policiers[] = $nouveauLivre;
         // }
-
-        switch ($nouveauLivre->getType()) {
+        $typeLivre = $nouveauLivre->getType();
+        switch ($typeLivre) {
             case 'roman':
                 $this->romans[] = $nouveauLivre;
                 break;
@@ -32,32 +31,50 @@ class Bibliotheque
             case 'policier':
                 $this->policiers[] = $nouveauLivre;
                 break;
-            case '':
+            default:
                 $this->nonClasses[] = $nouveauLivre;
                 break;
         }
     }
 
-    
     public function __toString()
     {
         $txt = "";
         $txt .= "############## Romans #############</br>";
-        for ($i = 0; $i < count($this->romans); $i++) {
-            $txt .= $this->romans[$i];
+        if (isset($this->romans)) {
+            for ($i = 0; $i < count($this->romans); $i++) {
+                $txt .= $this->romans[$i];
+            }
+        } else {
+            $txt .= "Pas de romans</br>";
         }
+
         $txt .= "############## Bds #############</br>";
-        foreach ($this->bds as $bd) {
-            $txt .= $bd;
+        if (isset($this->bds)) {
+            foreach ($this->bds as $bd) {
+                $txt .= $bd;
+            }
+        } else {
+            $txt .= "Pas de bande dessinée</br>";
         }
         $txt .= "############## Policiers #############</br>";
-        for ($i = 0; $i < count($this->policiers); $i++) {
-            $txt .= $this->policiers[$i];
+        if (isset($this->policiers)) {
+            for ($i = 0; $i < count($this->policiers); $i++) {
+                $txt .= $this->policiers[$i];
+            }
+        } else {
+            $txt .= "Pas de roman policier</br>";
         }
-        $txt .= "############## Non ClassÃ© #############</br>";
-        for ($i = 0; $i < count($this->nonClasses); $i++) {
-            $txt .= $this->nonClasses[$i];
+        $txt .= "############## Non classés #############</br>";
+        if (isset($this->nonClasses)) {
+            foreach ($this->nonClasses as $livre) {
+                $txt .= $livre;
+            }
+        } else {
+            $txt .= "Pas de livre non classé</br>";
         }
+
+
         return $txt;
     }
 }
@@ -69,16 +86,20 @@ class Livre
     public int $nbPages;
     private string $couleurCouverture;
     private bool $estTraduitEnAnglais;
-    private string $type;
+    private string $type = "Non classé";
 
 
-    public function __construct(string $titre, int $nbPages, string $couleurCouverture, bool $estTraduitEnAnglais, string $type)
+    public function __construct(string $titre, int $nbPages, string $couleurCouverture, bool $estTraduitEnAnglais)
     {
         $this->titre = $titre;
         $this->nbPages = $nbPages;
         $this->couleurCouverture = $couleurCouverture;
         $this->estTraduitEnAnglais = $estTraduitEnAnglais;
-        $this->type = $type;
+    }
+
+    public function createTypeLivre($nouveauType)
+    {
+        $this->type = $nouveauType;
     }
 
     private function traductionEnAnglais()
@@ -97,12 +118,6 @@ class Livre
     {
         $this->couleurCouverture = $nouvelleCouleur;
     }
-
-    public function modifierType($nouveauType)
-    {
-        $this->type = $nouveauType;
-    }
-
 
     public function __toString()
     {
@@ -140,49 +155,78 @@ class Livre
     //     return $this->couleurCouverture;
     // }
 
- 
+    // /**
+    //  * Set the value of couleurCouverture
+    //  *
+    //  * @param string $couleurCouverture
+    //  *
+    //  * @return self
+    //  */
     // public function setCouleurCouverture(string $couleurCouverture): self
     // {
     //     $this->couleurCouverture = $couleurCouverture;
     //     return $this;
     // }
 
-
+    // /**
+    //  * Get the value of estTraduitEnAnglais
+    //  *
+    //  * @return bool
+    //  */
     // public function getEstTraduitEnAnglais(): bool
     // {
     //     return $this->estTraduitEnAnglais;
     // }
 
+    // /**
+    //  * Set the value of estTraduitEnAnglais
+    //  *
+    //  * @param bool $estTraduitEnAnglais
+    //  *
+    //  * @return self
+    //  */
     // public function setEstTraduitEnAnglais(bool $estTraduitEnAnglais): self
     // {
     //     $this->estTraduitEnAnglais = $estTraduitEnAnglais;
     //     return $this;
     // }
 
- 
+    /**
+     * Get the value of type
+     *
+     * @return string
+     */
     public function getType(): string
     {
         return $this->type;
     }
 
-
-    public function setType(string $type): self
-    {
-        $this->type = $type;
-        return $this;
-    }
+    // /**
+    //  * Set the value of type
+    //  *
+    //  * @param string $type
+    //  *
+    //  * @return self
+    //  */
+    // public function setType(string $type): self
+    // {
+    //     $this->type = $type;
+    //     return $this;
+    // }
 }
 
-$l1 = new Livre("titre", 12, "bleue", false, "bd");
-$l2 = new Livre("roman", 12, "bleue", false, "roman");
-$l3 = new Livre("policier", 12, "bleue", false, "policier");
-$l4 = new Livre("policier", 12, "vert", false, '');
+$l1 = new Livre("titre", 12, "bleue", false);
+$l1->createTypeLivre("roman");
+$l2 = new Livre("roman", 12, "bleue", false);
+$l2->createTypeLivre("bd");
+$l2->createTypeLivre("policier");
+$l3 = new Livre("policier", 12, "bleue", false);
+$l3->createTypeLivre("bd");
 
 $maBibliotheque = new Bibliotheque();
 $maBibliotheque->ajouterLivre($l1);
 $maBibliotheque->ajouterLivre($l2);
 $maBibliotheque->ajouterLivre($l3);
-$maBibliotheque->ajouterLivre($l4);
 echo $maBibliotheque;
 
 // echo $l1;
@@ -190,4 +234,3 @@ echo $maBibliotheque;
 // echo $l1;
 // $l1->basculerEnAnglais();
 // echo $l1;
-
