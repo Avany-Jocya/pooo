@@ -1,13 +1,10 @@
 <?php
-
-
 class Personnage {
     private string $nom;
     private string $classe;
     protected int $attaque;
     protected int $pv;
     private bool $forceDuBien;
-
 
     public function __construct(string $nom,string $classe,int $attaque,int $pv,bool $forceDuBien)
     {
@@ -17,15 +14,12 @@ class Personnage {
         $this->pv = $pv;
         $this->forceDuBien = $forceDuBien;
     }
-
     private function calculDegat() {
         return $this->pv / 100 * $this->attaque ;
     }
-
     public function afficherDegats(){
         echo "Dégats infligés " . "par " . $this->nom . " : " . $this->calculDegat(), " dégats"; 
     }
-
     public function __toString()
     {
         $txt = "";
@@ -37,8 +31,6 @@ class Personnage {
         $txt .= "</br>";
         return $txt;
     }
-
-
 }
 
 class Humain extends Personnage {
@@ -102,8 +94,8 @@ class Zombie extends Personnage{
 }
 $perso1= new Humain ("Seonghwa","Mage",100,50,true,2);
 $perso2= new Humain("Bangchan","Mage",85,75,false,3);
-$perso3= new Humain("J-hope","hobbit",75, 47, true,2);
-$perso4= new Humain("Vernon","chevalier",110, 87, false,1);
+$perso3= new Humain("J-hope","Hobbit",75, 47, true,2);
+$perso4= new Humain("Vernon","Chevalier",110, 87, false,1);
 
 
 $zombie1 = new Zombie ("Avany","Zombie",100,10,false,90);
@@ -114,19 +106,14 @@ $personnages=[$perso1, $perso2, $perso3, $perso4];
 
 // $perso1->modifStats(10,30);
 
-
 foreach($personnages as $personnage) {
     echo $personnage;
 }
 
-
 foreach($zombies as $zombie) {
    
     echo $zombie;
-    
 }
-
-
 
 //Test de la méthode afficherDegats();
 // $perso1->afficherDegats();
@@ -142,7 +129,4 @@ foreach($zombies as $zombie) {
 // echo $perso2 ."</br>";
 // echo $perso3 ."</br>";
 // echo $perso4 ."</br>";
-
-
-
 ?>
