@@ -123,7 +123,7 @@ $livre4 = new Livre("BD", "Rahan", "Roger Lécureux, André Chéret", 50);
 $livre4->setEstTraduitEnAnglais(true);
 $livre5 = new Livre("Policiers", "Dors ma jolie", "Mary Hyggins Clark", 287);
 $livre5->setEstTraduitEnAnglais(true);
-$livre6 = new Livre("Policiers", "La Faille", "*Franck Thilliez", 310);
+$livre6 = new Livre("Policiers", "La Faille", "Franck Thilliez", 310);
 $livre6->setEstTraduitEnAnglais(false);
 
 $biblio = new Bibliotheque();

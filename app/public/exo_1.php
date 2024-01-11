@@ -27,6 +27,57 @@ class Personnage {
     }
 
 
+    public function getNom(): string {
+        return $this->nom;
+    }
+
+ 
+    public function setNom(string $nom): self {
+        $this->nom = $nom;
+        return $this;
+    }
+
+  
+    public function getClasse(): string {
+        return $this->classe;
+    }
+
+    public function setClasse(string $classe): self {
+        $this->classe = $classe;
+        return $this;
+    }
+
+    public function getAttaque(): int {
+        return $this->attaque;
+    }
+
+    
+    public function setAttaque(int $attaque): self {
+        $this->attaque = $attaque;
+        return $this;
+    }
+
+ 
+    public function getPv(): int {
+        return $this->pv;
+    }
+
+ 
+    public function setPv(int $pv): self {
+        $this->pv = $pv;
+        return $this;
+    }
+
+
+    public function getForceDuBien(): bool {
+        return $this->forceDuBien;
+    }
+
+ 
+    public function setForceDuBien(bool $forceDuBien): self {
+        $this->forceDuBien = $forceDuBien;
+        return $this;
+    }
 }
 $perso1= new Personnage("Gandalf","Mage",100,50,true);
 $perso2=new Personnage("Saruman","Mage",85,75,false);
