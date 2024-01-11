@@ -38,6 +38,111 @@ class Personnage {
 
 
 
+
+    /**
+     * Get the value of nom
+     *
+     * @return string
+     */
+    public function getNom(): string {
+        return $this->nom;
+    }
+
+    /**
+     * Set the value of nom
+     *
+     * @param string $nom
+     *
+     * @return self
+     */
+    public function setNom(string $nom): self {
+        $this->nom = $nom;
+        return $this;
+    }
+
+    /**
+     * Get the value of classe
+     *
+     * @return string
+     */
+    public function getClasse(): string {
+        return $this->classe;
+    }
+
+    /**
+     * Set the value of classe
+     *
+     * @param string $classe
+     *
+     * @return self
+     */
+    public function setClasse(string $classe): self {
+        $this->classe = $classe;
+        return $this;
+    }
+
+    /**
+     * Get the value of attaque
+     *
+     * @return int
+     */
+    public function getAttaque(): int {
+        return $this->attaque;
+    }
+
+    /**
+     * Set the value of attaque
+     *
+     * @param int $attaque
+     *
+     * @return self
+     */
+    public function setAttaque(int $attaque): self {
+        $this->attaque = $attaque;
+        return $this;
+    }
+
+    /**
+     * Get the value of pv
+     *
+     * @return int
+     */
+    public function getPv(): int {
+        return $this->pv;
+    }
+
+    /**
+     * Set the value of pv
+     *
+     * @param int $pv
+     *
+     * @return self
+     */
+    public function setPv(int $pv): self {
+        $this->pv = $pv;
+        return $this;
+    }
+
+    /**
+     * Get the value of forceDuBien
+     *
+     * @return bool
+     */
+    public function getForceDuBien(): bool {
+        return $this->forceDuBien;
+    }
+
+    /**
+     * Set the value of forceDuBien
+     *
+     * @param bool $forceDuBien
+     *
+     * @return self
+     */
+    public function setForceDuBien(bool $forceDuBien): self {
+        $this->forceDuBien = $forceDuBien;
+        return $this;
+    }
 }
 $perso1= new Personnage("Gandalf","Mage",100,50,true);
 $perso2=new Personnage("Saruman","Mage",85,75,false);

@@ -9,6 +9,7 @@ echo '<ul>
 <li><a href="user.php">USER: toString()</a></li>
 <li><a href="exo_2_constante.php">exo2 constante</a></li>
 <li><a href="exo_nouvelle_classe.php">exo nouvelle classe</a></li>
+<li><a href="exo_biblio.php">exo_biblio</a></li>
 </ul>';
 
 ?>
