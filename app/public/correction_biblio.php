@@ -161,20 +161,18 @@ echo $maBibliotheque;
 // echo $l1;
 // $l1->basculerEnAnglais();
 // echo $l1;
-?>
 
-<?php
 // Exercice:
 
 // - création => pas de type
 
 // - méthode pour modifier type
+
 // private function changerDeType($nouveauType){
 //         $this->type = $nouveauType;
 //     }
-$l1->setType("policier")."</br>";      // appel méthode pour modifier l'age
-echo $l1->getType()."</br>";
-
+$l1->setType("policier")."</br>";      
+echo $l1;
 // - par défaut => non classés
-
 ?>
+
