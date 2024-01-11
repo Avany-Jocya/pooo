@@ -64,22 +64,11 @@ class Voiture {
         $this->nbPortes = $nouveauNbPortes;
     }
 
-    /**
-     * Get the value of estElectrique
-     *
-     * @return bool
-     */
     public function getEstElectrique(): bool {
         return $this->estElectrique;
     }
 
-    /**
-     * Set the value of estElectrique
-     *
-     * @param bool $estElectrique
-     *
-     * @return self
-     */
+ 
     public function setEstElectrique(bool $estElectrique): self {
         $this->estElectrique = $estElectrique;
         return $this;
