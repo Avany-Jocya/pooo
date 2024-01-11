@@ -145,69 +145,36 @@ class Livre
         // $this->nbPages = $this->nbPages + $nbPagesAjoutees;
     }
 
-    // /**
-    //  * Get the value of couleurCouverture
-    //  *
-    //  * @return string
-    //  */
+ 
     // public function getCouleurCouverture(): string
     // {
     //     return $this->couleurCouverture;
     // }
 
-    // /**
-    //  * Set the value of couleurCouverture
-    //  *
-    //  * @param string $couleurCouverture
-    //  *
-    //  * @return self
-    //  */
+
     // public function setCouleurCouverture(string $couleurCouverture): self
     // {
     //     $this->couleurCouverture = $couleurCouverture;
     //     return $this;
     // }
 
-    // /**
-    //  * Get the value of estTraduitEnAnglais
-    //  *
-    //  * @return bool
-    //  */
     // public function getEstTraduitEnAnglais(): bool
     // {
     //     return $this->estTraduitEnAnglais;
     // }
 
-    // /**
-    //  * Set the value of estTraduitEnAnglais
-    //  *
-    //  * @param bool $estTraduitEnAnglais
-    //  *
-    //  * @return self
-    //  */
     // public function setEstTraduitEnAnglais(bool $estTraduitEnAnglais): self
     // {
     //     $this->estTraduitEnAnglais = $estTraduitEnAnglais;
     //     return $this;
     // }
 
-    /**
-     * Get the value of type
-     *
-     * @return string
-     */
+  
     public function getType(): string
     {
         return $this->type;
     }
 
-    // /**
-    //  * Set the value of type
-    //  *
-    //  * @param string $type
-    //  *
-    //  * @return self
-    //  */
     // public function setType(string $type): self
     // {
     //     $this->type = $type;
