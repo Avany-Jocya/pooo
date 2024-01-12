@@ -12,6 +12,7 @@ echo '<ul>
 <li><a href="exo_biblio.php">exo_biblio</a></li>
 <li><a href="correction_biblio.php">correction_biblio</a></li>
 <li><a href="exo1_heritage.php">Exercice heritage</a></li>
+<li><a href="exo2_heritage.php">Exercice2 heritage</a></li>
 </ul>';
 
 ?>
